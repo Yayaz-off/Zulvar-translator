@@ -1,0 +1,66 @@
+<!DOCTYPE html><html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Traducteur Français → Zulvar</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 2rem;
+      background: #121212;
+      color: #f0f0f0;
+    }
+    textarea, input {
+      width: 100%;
+      padding: 0.5rem;
+      margin-bottom: 1rem;
+      background: #1e1e1e;
+      border: 1px solid #333;
+      color: #f0f0f0;
+    }
+    button {
+      padding: 0.5rem 1rem;
+      background: #2a6df4;
+      border: none;
+      color: white;
+      cursor: pointer;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>Traducteur Français → Zulvar</h1>
+  <textarea id="input" rows="4" placeholder="Écris ici une phrase en français..."></textarea>
+  <button onclick="traduire()">Traduire</button>
+  <h2>Traduction Zulvar :</h2>
+  <div id="output"></div>  <script>
+    const dictionnaire = {
+      "ami": "shaen",
+      "ennemi": "draek",
+      "chef": "valkor",
+      "enfant": "mirol",
+      "guerrier": "serak",
+      "approcher": "velnosh",
+      "fuir": "shaal",
+      "combattre": "karneth",
+      "protéger": "lurek",
+      "parler": "avrel",
+      "voir": "silven",
+      "feu": "zarn",
+      "ombre": "thrall",
+      "lumière": "valeth",
+      "épée": "kranor",
+      "jour": "elrûn",
+      "nuit": "dorvan",
+      "forêt": "sharnak",
+      // ... ajoute ici les 2500 mots restants
+    };
+
+    function traduire() {
+      const input = document.getElementById('input').value.toLowerCase();
+      const mots = input.split(/\s+/);
+      const traduction = mots.map(mot => dictionnaire[mot] || `[${mot}]`).join(' ');
+      document.getElementById('output').innerText = traduction;
+    }
+  </script></body>
+</html>

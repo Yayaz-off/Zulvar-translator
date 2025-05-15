@@ -1,171 +1,12 @@
-<!DOCTYPE html><html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Traducteur Français → Zulvar</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      padding: 2rem;
-      background: #121212;
-      color: #f0f0f0;
-    }
-    textarea, input {
-      width: 100%;
-      padding: 0.5rem;
-      margin-bottom: 1rem;
-      background: #1e1e1e;
-      border: 1px solid #333;
-      color: #f0f0f0;
-    }
-    button {
-      padding: 0.5rem 1rem;
-      background: #2a6df4;
-      border: none;
-      color: white;
-      cursor: pointer;
-      font-weight: bold;
-    }
-  </style>
-</head>
-<body>
-  <h1>Traducteur Français → Zulvar</h1>
-  <textarea id="input" rows="4" placeholder="Écris ici une phrase en français..."></textarea>
-  <button onclick="traduire()">Traduire</button>
-  <h2>Traduction Zulvar :</h2>
-  <div id="output"></div>  <script>
-    const dictionnaire = {
-      "ami": "shaen",
-      "ennemi": "draek",
-      "chef": "valkor",
-      "enfant": "mirol",
-      "guerrier": "serak",
-      "approcher": "velnosh",
-      "fuir": "shaal",
-      "combattre": "karneth",
-      "protéger": "lurek",
-      "parler": "avrel",
-      "voir": "silven",
-      "feu": "zarn",
-      "ombre": "thrall",
-      "lumière": "valeth",
-      "épée": "kranor",
-      "jour": "elrûn",
-      "nuit": "dorvan",
-      "forêt": "sharnak",
-      // ... Ajout automatique de 2500 mots ci-dessous :
-      "ville": "narok",
-      "maison": "draven",
-      "animal": "turvak",
-      "technologie": "silvaron",
-      "machine": "vorkul",
-      "ordinateur": "teklar",
-      "robot": "droven",
-      "drone": "firnax",
-      "soldat": "morvak",
-      "pouvoir": "zarkul",
-      "énergie": "veluth",
-      "espoir": "miren",
-      "colère": "durnak",
-      "amour": "thelna",
-      "trahison": "varlun",
-      "vérité": "zariel",
-      "mensonge": "kariel",
-      "portail": "muldrak",
-      "univers": "rathen",
-      "étoile": "surnel",
-      "lune": "velna",
-      "soleil": "vurnax",
-      "eau": "nurek",
-      "terre": "darnen",
-      "feuille": "lareth",
-      "vent": "shulen",
-      "neige": "karnel",
-      "orage": "thurnak",
-      "montagne": "velgor",
-      "océan": "marul",
-      "rivière": "sirnek",
-      "chemin": "travul",
-      "épique": "zurnak",
-      "ancien": "drulek",
-      "futur": "veldron",
-      "présent": "melvar",
-      "passé": "turvak",
-      "jour": "elrûn",
-      "semaine": "kalrun",
-      "mois": "durnel",
-      "année": "tharkon",
-      "temps": "meluth",
-      "matin": "solvar",
-      "soir": "drunak",
-      "minuit": "norzel",
-      "demain": "felnor",
-      "hier": "karnir",
-      "lundi": "narûn",
-      "mardi": "velûn",
-      "mercredi": "sarûn",
-      "jeudi": "darûn",
-      "vendredi": "zarûn",
-      "samedi": "mirûn",
-      "dimanche": "tharûn", 
-      "bonjour": "zaul",
-      "ami": "ulvak",
-      "chat": "rinz",
-      "chien": "brog",
-      "maison": "darok",
-      "je": "ka",
-      "tu": "ta",
-      "il": "sa",
-      "elle": "sha",
-      "nous": "kai",
-      "vous": "tai",
-      "ils": "sai",
-      "être": "zor",
-      "avoir": "gal",
-      "manger": "nork",
-      "boire": "sluk",
-      "un": "nek",
-      "une": "nek",
-      "le": "ek",
-      "la": "ek",
-      "et": "ur",
-      "ou": "nok",
-      "non": "zar",
-      "oui": "nur",
-      "merci": "droka",
-      "s'il vous plaît": "krinai",
-      "pomme": "gralak",
-      "eau": "shenn"
-      "étranger": "ontril",
-      "ami": "shaen",
-      "ennemi": "draek",
-      "chef": "valkor",
-      "commandant": "valkor",
-      "enfant": "mirol",
-      "guerrier": "serak",
-      "noble": "faltren",
-      "roi": "morzul",
-      "villageois": "velkar",
-      "sorcier": "shenrak",
-      "ancien": "zilvek",
-      "enseignant": "nolrak",
-      "apprenti": "jelkor",
-      "messager": "droven",
-      "commerçant": "tulzor"
-      "combattre": "karneth",
-      "penser": "mirzul",
-      "enseigner": "varol",
-      "amour": "jolven",
-      "espoir": "narven",
-      "tristesse": "velmir",
-      "colère": "bralken",
-      "haine": "korvak",
-      "peur": "marzul",
-      "joie": "silrek",
-      "sanctuaire": "jolrak",
-      "honneur": "falzon",
-      "vengeance": "delzor"
-      "approcher": "velnosh", 
+const dictionnaire = {
+  "etranger": "ontril", "ami": "shaen", "ennemi": "draek", "chef": "valkor",
+  "commandant": "valkor", "enfant": "mirol", "guerrier": "serak", "noble": "faltren",
+  "roi": "morzul", "villageois": "velkar", "sorcier": "shenrak", "ancien": "zilvek",
+  "enseignant": "nolrak", "apprenti": "jelkor", "messager": "droven", "commercant": "tulzor",
+  "combattre": "karneth", "penser": "mirzul", "enseigner": "varol", "amour": "jolven",
+  "espoir": "narven", "tristesse": "velmir", "colere": "bralken", "haine": "korvak",
+  "peur": "marzul", "joie": "silrek", "sanctuaire": "jolrak", "honneur": "falzon", "vengeance": "delzor",
+    "approcher": "velnosh", 
       "fuir": "shaal", 
       "protéger": "lurek", 
       "parler": "avrel",
@@ -297,15 +138,22 @@
       "puce": "sharnel", 
       "serveur": "jalketh",
       "console": "molzak", 
-      "énergie": "falner"  
-      // ... (continue avec autant de mots que nécessaire)
-    };
+      "énergie": "falner
+// ajoute ici le reste du dictionnaire que je t’ai donné avant
+};
 
-    function traduire() {
-      const input = document.getElementById('input').value.toLowerCase();
-      const mots = input.split(/\s+/);
-      const traduction = mots.map(mot => dictionnaire[mot] || `[${mot}]`).join(' ');
-      document.getElementById('output').innerText = traduction;
-    }
-  </script></body>
-</html>
+function normalize(str) {
+  return str
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "") // accents
+    .replace(/[.,!?;:()]/g, "")      // ponctuation
+    .replace(/s\b/g, "");            // pluriels simples
+}
+
+document.getElementById("traduire").addEventListener("click", () => {
+  const input = document.getElementById("francais").value;
+  const mots = input.split(" ").map(normalize);
+  const resultat = mots.map(mot => dictionnaire[mot] || `[${mot}]`).join(" ");
+  document.getElementById("zulvar").textContent = resultat;
+});

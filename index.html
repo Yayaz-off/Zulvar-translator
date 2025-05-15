@@ -1,3 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Traducteur Français ➜ Zulvar</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #eef2f7;
+      text-align: center;
+      padding: 40px;
+    }
+    h1 {
+      margin-bottom: 20px;
+    }
+    textarea {
+      width: 80%;
+      height: 100px;
+      margin: 10px 0;
+      padding: 10px;
+      font-size: 16px;
+    }
+    button {
+      padding: 10px 25px;
+      font-size: 16px;
+      background-color: #0077cc;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #005fa3;
+    }
+  </style>
+</head>
+<body>
+  <h1>Traducteur Français ➜ Zulvar</h1>
+
+  <textarea id="input" placeholder="Écris une phrase en français..."></textarea><br/>
+  <button onclick="translate()">Traduire</button><br/>
+  <textarea id="output" placeholder="Traduction zulvar..." readonly></textarea>
+
+  <script>
 const dictionnaire = {
   "etranger": "ontril", "ami": "shaen", "ennemi": "draek", "chef": "valkor",
   "commandant": "valkor", "enfant": "mirol", "guerrier": "serak", "noble": "faltren",
